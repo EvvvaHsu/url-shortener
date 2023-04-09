@@ -1,1 +1,25 @@
-<h1>hello world</h1>
+<div class="container row">
+
+                <div class="py-5" style="text-align:center;">
+                    <img src="https://assets-lighthouse.alphacamp.co/uploads/image/file/16716/ExportedContentImage_00.png"
+                        alt="URL Link" width="200px;" />
+                </div>
+                <form method="POST" action="/">
+                    <div class="row mb-2">
+                        <input type="text" name="url" value="" class="form-control" placeholder="Input URL here">
+                    </div>
+                    <div class=" row mb-2">
+                        <button class="btn btn-light" type="submit">Generate URL</button>
+                    </div>
+
+                    {{!-- show URL --}}
+                    <div class="alert alert-info row mb-2" role="alert">
+                        <span class="mr-2">Your password is:</span> <code>password</code>
+
+                    </div>
+                    <div class=" row mb-2">
+                        <button class="btn btn-light" type="submit">Copy</button>
+                    </div>
+
+                </form>
+            </div>

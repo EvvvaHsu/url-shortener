@@ -7,8 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>URL creater</title>
     <!-- link css files here -->
-    <link href="https://bootswatch.com/5/yeti/bootstrap.min.css" rel="stylesheet"
-        crossorigin="anonymous">
+    <link href="https://bootswatch.com/5/yeti/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
     <link rel="stylesheet" href="/stylesheets/styles.css">
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/f04357375e.js" crossorigin="anonymous"></script>
@@ -17,8 +16,19 @@
 <body>
 
 
- {{!-- partial template: index.handlebars will replace this part --}}
-    {{{ body }}}
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-12 col-lg-10 col-xl-8 mx-auto">
+                <div style="text-align:center;">
+                    <h1>Welcome to URL Shortener</h1>
+                </div>
+
+                {{!-- partial template: index.handlebars will replace this part --}}
+                {{{ body }}}
+
+            </div>
+        </div>
+    </div>
 
 
     <!-- include javascript files here -->
