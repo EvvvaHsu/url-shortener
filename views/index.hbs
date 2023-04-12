@@ -1,25 +1,32 @@
 <div class="container row">
 
-                <div class="py-5" style="text-align:center;">
-                    <img src="https://assets-lighthouse.alphacamp.co/uploads/image/file/16716/ExportedContentImage_00.png"
-                        alt="URL Link" width="200px;" />
-                </div>
-                <form method="POST" action="/">
-                    <div class="row mb-2">
-                        <input type="text" name="url" value="" class="form-control" placeholder="Input URL here">
-                    </div>
-                    <div class=" row mb-2">
-                        <button class="btn btn-light" type="submit">Generate URL</button>
-                    </div>
+    <div class="py-5" style="text-align:center;">
+        <img src="https://assets-lighthouse.alphacamp.co/uploads/image/file/16716/ExportedContentImage_00.png"
+            alt="URL Link" width="200px;" />
+    </div>
+    <form method="POST" action="/">
+        <div class="row mb-2">
+            <input type="text" name="url" value="" class="form-control" placeholder="Input URL here">
+        </div>
+        <div class=" row mb-2">
+            <button class="btn btn-light" type="submit">Generate URL</button>
+        </div>
+    </form>
+    {{!-- show URL --}}
+    <form method="POST" action="/copy">
+    <div class="alert alert-info row mb-2" role="alert">
+        <span class="mr-2">Your shortened link is:</span>
+        <a href="{{url.original_url}}">{{ url.shortened_url }}</a>
+    </div>
 
-                    {{!-- show URL --}}
-                    <div class="alert alert-info row mb-2" role="alert">
-                        <span class="mr-2">Your password is:</span> <code>password</code>
-
-                    </div>
-                    <div class=" row mb-2">
-                        <button class="btn btn-light" type="submit">Copy</button>
-                    </div>
-
-                </form>
-            </div>
+    <div class=" row mb-2">
+        <input type="hidden" name="input" value="{{url.shortened_url}}" class="form-control" >
+        <button class="btn btn-light" type="submit">Copy</button>
+    </div>
+    {{#if error}}
+    <div class="row mb-2 alert alert-danger mt-5" role="alert">
+        <span class="mr-2">{{ error }}</span>
+    </div>
+    {{/if}}
+    </form>
+</div>

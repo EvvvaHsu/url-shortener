@@ -4,6 +4,7 @@ const exphbs = require('express-handlebars')
 const bodyParser = require('body-parser')
 const methodOverride = require('method-override')
 
+
 if (process.env.NODE_ENV !== 'production') {
     require('dotenv').config()
 }
@@ -11,6 +12,7 @@ if (process.env.NODE_ENV !== 'production') {
 const app = express()
 //mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true }) 
 require('./config/mongoose')
+
 const routes = require('./routes') //預設會去找底下的index.js
 
 // const db = mongoose.connection
@@ -30,10 +32,6 @@ app.use(bodyParser.urlencoded({ extended: true }))
 
 app.use(methodOverride('_method'))
 app.use(routes)
-
-app.get('/', (req, res) => {
-    res.render('index')
-})
 
 app.listen(3000, () => {
     console.log('App is running on http://localhost:3000')
