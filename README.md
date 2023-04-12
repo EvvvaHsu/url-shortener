@@ -1,6 +1,6 @@
 # URL shortener website
 
-一個使用 Node.js + Express 打造的餐廳美食網站，提供使用者依照餐廳名稱與進行搜尋，並顯示餐廳資訊。
+一個使用 Node.js + Express 打造的縮網址網站，提供使用者依照餐廳名稱與進行搜尋，並顯示餐廳資訊。
 
 ## Features - 產品功能
 
