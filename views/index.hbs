@@ -11,22 +11,26 @@
         <div class=" row mb-2">
             <button class="btn btn-light" type="submit">Generate URL</button>
         </div>
+
+
     </form>
+
     {{!-- show URL --}}
     <form method="POST" action="/copy">
-    <div class="alert alert-info row mb-2" role="alert">
-        <span class="mr-2">Your shortened link is:</span>
-        <a href="{{url.original_url}}">{{ url.shortened_url }}</a>
-    </div>
 
-    <div class=" row mb-2">
-        <input type="hidden" name="input" value="{{url.shortened_url}}" class="form-control" >
-        <button class="btn btn-light" type="submit">Copy</button>
-    </div>
-    {{#if error}}
-    <div class="row mb-2 alert alert-danger mt-5" role="alert">
-        <span class="mr-2">{{ error }}</span>
-    </div>
-    {{/if}}
+        <div class="alert alert-info row mb-2" role="alert">
+            <span class="mr-2">Your shortened link is:</span>
+            {{#if newurl}}<a href="{{originalurl}}">{{ newurl }}</a>{{/if}}
+        </div>
+        <div class=" row mb-2">
+            <input type="hidden" name="input" value="{{newurl}}" class="form-control">
+            <button class="btn btn-light" type="submit">Copy</button>
+        </div>
+        {{#if error}}
+        <div class="row mb-2 alert alert-danger mt-5" role="alert">
+            <span class="mr-2">{{ error }}</span>
+        </div>
+        {{/if}}
+
     </form>
 </div>
