@@ -26,8 +26,8 @@ router.post('/', (req, res) => {
                 let shortened_url
                 if (url) {
                     shortened_url = url.shortened_url
-                    console.log(url)
-                    console.log(shortened_url)
+                    //console.log(url)
+                    //console.log(shortened_url)
                     return res.render('index',{shortened_url, original_url})
                 } else {
                     shortened_url = generateURL()
@@ -42,12 +42,12 @@ router.post('/', (req, res) => {
 
 
 
-// router.post('/copy', (req, res) => {
-//     //console.log(req.body.input)
-//     ncp.copy(req.body.input, function () {
-//         console.log('copy link')
-//     })
-// })
+router.post('/copy', (req, res) => {
+    //console.log(req.body.input)
+    ncp.copy(req.body.input, function () {
+        console.log('copy link')
+    })
+})
 
 
 router.get('/:data', (req, res) => {
