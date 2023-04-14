@@ -23,7 +23,7 @@
             {{#if shortened_url}}<a href="{{original_url}}">{{ shortened_url }}</a>{{/if}}
         </div>
         <div class=" row mb-2">
-            <input type="hidden" name="input" value="{{shortened_url}}" class="form-control">
+            <input type="hidden" name="input" value="{{original_url}}" class="form-control">
             <button class="btn btn-light" type="submit">Copy</button>
         </div>
         {{#if error}}
