@@ -28,7 +28,7 @@ router.post('/', (req, res) => {
                     shortened_url = url.shortened_url
                     //console.log(url)
                     //console.log(shortened_url)
-                    return res.render('index',{shortened_url, original_url})
+                    return res.render('index', { shortened_url, original_url })
                 } else {
                     shortened_url = generateURL()
                     shortenURL.create({ original_url, shortened_url })
@@ -42,30 +42,5 @@ router.post('/', (req, res) => {
 
 
 
-router.post('/copy', (req, res) => {
-    console.log(req.body.input)
-    ncp.copy(req.body.input, function () {
-        console.log('copy link')
-    })
-})
-
-
-router.get('/:data', (req, res) => {
-    const data = req.params.data
-    // console.log(req.params)
-    // console.log(data)
-    shortenURL.findOne({ shortened_url: `localhost:3000/${data}`})
-        .lean()
-        .then(
-            url => res.redirect(url.original_url)
-            )
-})
-
 module.exports = router
 
-//target:
-//輸入相同網址時，產生一樣的縮址 v
-//若使用者沒有輸入內容，就按下了送出鈕，需要防止表單送出並提示使用者 v
-//是否可以成功使用短網址連向原始網站 v
-//短網址格式是否為 5 組英數亂碼 v
-//challenge: 使用者可以按 Copy 來複製縮短後的網址 v
