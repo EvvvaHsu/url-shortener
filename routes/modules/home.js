@@ -26,9 +26,9 @@ router.post('/', (req, res) => {
                 let shortened_url
                 if (url) {
                     shortened_url = url.shortened_url
-                    //console.log(url)
-                    //console.log(shortened_url)
-                    return res.render('index', { shortened_url, original_url })
+                    // console.log(url)
+                    // console.log(shortened_url)
+                    return res.render('index', { shortened_url, original_url})
                 } else {
                     shortened_url = generateURL()
                     shortenURL.create({ original_url, shortened_url })
@@ -40,7 +40,18 @@ router.post('/', (req, res) => {
 
 })
 
-
+router.get("/:shortURL", (req, res) => {
+    const shortened_url = req.params.shortURL
+    //console.log(shortened_url)
+    shortenURL.findOne({shortened_url:`http://localhost:3000/` + shortened_url})
+   
+    .then(url => 
+        { 
+            //console.log(url)
+            res.redirect(url.original_url)
+        }
+        )
+  })
 
 module.exports = router
 

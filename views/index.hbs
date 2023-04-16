@@ -6,7 +6,7 @@
     </div>
     <form method="POST" action="/">
         <div class="row mb-2">
-            <input id="copytext" type="text" name="url" data-value="{{original_url}}" value="{{original_url}}"
+            <input  type="text" name="url"  value="{{original_url}}"
                 class="form-control" placeholder="Input URL here">
         </div>
         <div class=" row mb-2">
@@ -17,8 +17,8 @@
 
         <div class="alert alert-info row mb-2" role="alert">
             <span class="mr-2">Your shortened link is:</span>
-            {{!-- {{#if shortened_url}}<p>{{shortened_url}}</p>{{/if}} --}}
-            {{#if shortened_url}}<a href="{{original_url}}">{{ shortened_url }}</a>{{/if}}
+            {{#if shortened_url}}<p id="copytext" data-value="{{shortened_url}}">{{ shortened_url }}</p>{{/if}}
+            {{!-- {{#if shortened_url}}<a id=""  href="{{original_url}}">{{ shortened_url }}</a>{{/if}} --}}
         </div>
 
 
